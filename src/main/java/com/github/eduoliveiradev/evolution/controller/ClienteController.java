@@ -2,6 +2,7 @@ package com.github.eduoliveiradev.evolution.controller;
 
 import com.github.eduoliveiradev.evolution.dto.ClienteDTO;
 import com.github.eduoliveiradev.evolution.service.ClienteService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public UUID criaCliente(@RequestBody ClienteDTO clienteDTO) {
+    public UUID criaCliente(@Validated @RequestBody ClienteDTO clienteDTO) {
 
         return clienteService.save(clienteDTO);
     }
