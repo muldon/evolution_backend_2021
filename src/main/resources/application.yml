@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:${POSTGRES_HOST:postgresql://localhost}:5432/evolution
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:123456}
