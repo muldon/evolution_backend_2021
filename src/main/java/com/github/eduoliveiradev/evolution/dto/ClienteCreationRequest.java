@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-public record ClienteDTO(
+public record ClienteCreationRequest(
         @NotBlank
         String nome,
         @Email
