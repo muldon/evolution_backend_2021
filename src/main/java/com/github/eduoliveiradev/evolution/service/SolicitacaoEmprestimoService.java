@@ -1,5 +1,6 @@
 package com.github.eduoliveiradev.evolution.service;
 
+import com.github.eduoliveiradev.evolution.dto.SolicitacaoEmprestimoDetalheResponse;
 import com.github.eduoliveiradev.evolution.dto.SolicitacaoEmprestimoListagemResponse;
 import com.github.eduoliveiradev.evolution.dto.SolicitacaoEmprestimoRequest;
 import com.github.eduoliveiradev.evolution.entity.SolicitacaoEmprestimo;
@@ -8,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -44,5 +46,9 @@ public class SolicitacaoEmprestimoService {
 
     public List<SolicitacaoEmprestimoListagemResponse> findMySolicitacaoEmprestimo() {
         return solicitacaoEmprestimoRepository.findMySolicitacaoEmprestimo(getClienteUuid());
+    }
+
+    public Optional<SolicitacaoEmprestimoDetalheResponse> findDetalheEmprestimo(UUID uuidSolicitacaoEmprestimo) {
+        return solicitacaoEmprestimoRepository.findDetalheEmprestimo(uuidSolicitacaoEmprestimo, getClienteUuid());
     }
 }
