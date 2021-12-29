@@ -6,8 +6,10 @@ import com.github.eduoliveiradev.evolution.dto.SolicitacaoEmprestimoRequest;
 import com.github.eduoliveiradev.evolution.service.SolicitacaoEmprestimoService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -34,7 +36,10 @@ public class SolicitacaoEmprestimoController {
     }
 
     @PostMapping
-    public UUID criar(@RequestBody SolicitacaoEmprestimoRequest solicitacaoEmprestimoRequest) {
-        return solicitacaoEmprestimoService.save(solicitacaoEmprestimoRequest);
+    public ResponseEntity<UUID> criar(@Validated @RequestBody SolicitacaoEmprestimoRequest solicitacaoEmprestimoRequest) {
+        if(solicitacaoEmprestimoRequest.dataPrimeiraParcela().isAfter(LocalDate.now().plusMonths(3))){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(solicitacaoEmprestimoService.save(solicitacaoEmprestimoRequest));
     }
 }
