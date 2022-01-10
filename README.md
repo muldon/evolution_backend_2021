@@ -5,6 +5,8 @@
    `./gradlew tasks bootRun`
 3. acesse o link http://localhost:8080/swagger-ui.html
 
+![Api demo](imagens/swagger.gif)
+
 ## Escolhas e justificativas:
 * **Spring framework:**
 framework padrão de mercado, versátil, flexível, possui forte retrocompatibilidade,
@@ -61,6 +63,8 @@ permitindo também que interajam com a API.
 * **Docker:**
 tendo o sistema rodando em containers torna mais fácil tanto rodar o sistema localmente quanto o deploy em produção.
 
+## Modelo de dados
+![Api demo](imagens/bancodedados.png)
 
 ## Evoluções
 * validação/ativação de email (garantir que o cliente é dono do email)
