@@ -23,4 +23,8 @@ public class ClienteController {
     public UUID criaCliente(@Validated @RequestBody ClienteCreationRequest clienteDTO) {
         return clienteService.save(clienteDTO);
     }
+    
+    
+    
+    
 }

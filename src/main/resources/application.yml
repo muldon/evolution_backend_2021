@@ -7,3 +7,7 @@ spring:
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub
+  
+tao:
+  private.key: classpath:tao_private_key.key
+  public.key: classpath:tao_public_key.key  	

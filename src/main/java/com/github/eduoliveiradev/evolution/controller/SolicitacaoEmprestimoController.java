@@ -27,6 +27,11 @@ public class SolicitacaoEmprestimoController {
     public List<SolicitacaoEmprestimoListagemResponse> listar() {
         return solicitacaoEmprestimoService.findMySolicitacaoEmprestimo();
     }
+    
+    @GetMapping("/test")
+    public void test() {
+        System.out.println("yeah");
+    }
 
     @GetMapping("/{uuidSolicitacaoEmprestimo}")
     public ResponseEntity<SolicitacaoEmprestimoDetalheResponse> detalhe(@PathVariable UUID uuidSolicitacaoEmprestimo) {
