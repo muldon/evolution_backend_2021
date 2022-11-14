@@ -2,7 +2,7 @@ package com.github.eduoliveiradev.evolution.dto;
 
 import javax.validation.constraints.NotBlank;
 
-public record LoginRequest2(
+public record AuthRequest(
 		@NotBlank
         String grant_type,
         @NotBlank
