@@ -1,15 +1,8 @@
-spring:
-  datasource:
-    url: jdbc:${POSTGRES_HOST:postgresql://localhost}:5432/evolution
-    username: ${POSTGRES_USER:postgres}
-    password: ${POSTGRES_PASSWORD:123456}
-
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub
   
-  
-#Authorization server identifier (s). That is, the "aud" parameter.
+#Authorization server identifier. That is, the "aud" parameter.
 authorizationserver:
   auth.token.url: http://host.docker.internal:8080/auth/platform/token/tao 
   
