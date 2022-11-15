@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.config;
+package cl.services.lti1p3.ag.receiver.config;
 
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;

@@ -1,9 +1,8 @@
-package com.github.eduoliveiradev.evolution.service;
+package cl.services.lti1p3.ag.receiver.service;
 
 import org.springframework.stereotype.Service;
 
-import com.github.eduoliveiradev.evolution.dto.Score;
-
+import cl.services.lti1p3.ag.receiver.dto.Score;
 import lombok.extern.slf4j.Slf4j;
 
 @Service

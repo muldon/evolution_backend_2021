@@ -2,7 +2,7 @@
   This program is the subject of trade secrets and intellectual property 
   rights owned by Carnegie Learning. This legend must continue to appear 
   in the source code despite modifications or enhancements by any party.*/
-package com.github.eduoliveiradev.evolution.service;
+package cl.services.lti1p3.ag.receiver.exception;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Parent class for exceptions used and thrown by members of the cl.services
+ * Parent class for exceptions used and thrown by members of the cl.services.lti1p3.ag.receiver
  * packages. needs:<ul>
  * <li> best practice is not to show stack traces to users,
  * however, we also need a way to identify errors when they occur.

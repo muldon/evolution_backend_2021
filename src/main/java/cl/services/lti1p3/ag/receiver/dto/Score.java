@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.dto;
+package cl.services.lti1p3.ag.receiver.dto;
 
 import javax.validation.constraints.NotBlank;
 

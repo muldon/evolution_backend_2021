@@ -4,7 +4,14 @@ plugins {
 	id 'java'
 }
 
-group = 'com.github.eduoliveiradev'
+apply plugin: 'eclipse'
+eclipse {
+    project {
+        name = 'lti1p3-ag-receiver'
+    }
+}
+
+group = 'com.github.muldon'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 

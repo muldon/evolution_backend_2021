@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.controller;
+package cl.services.lti1p3.ag.receiver.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.eduoliveiradev.evolution.dto.Score;
-import com.github.eduoliveiradev.evolution.service.AGService;
+import cl.services.lti1p3.ag.receiver.dto.Score;
+import cl.services.lti1p3.ag.receiver.service.AGService;
 
 @RestController
 public class AGController {

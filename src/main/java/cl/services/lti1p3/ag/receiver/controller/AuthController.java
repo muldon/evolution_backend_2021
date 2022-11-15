@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.controller;
+package cl.services.lti1p3.ag.receiver.controller;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.eduoliveiradev.evolution.dto.AccessToken;
-import com.github.eduoliveiradev.evolution.dto.AuthRequest;
-import com.github.eduoliveiradev.evolution.service.AuthService;
-import com.github.eduoliveiradev.evolution.service.LTI1p3Exception;
 import com.nimbusds.jose.JOSEException;
 
+import cl.services.lti1p3.ag.receiver.dto.AccessToken;
+import cl.services.lti1p3.ag.receiver.dto.AuthRequest;
+import cl.services.lti1p3.ag.receiver.exception.LTI1p3Exception;
+import cl.services.lti1p3.ag.receiver.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController

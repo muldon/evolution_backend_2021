@@ -2,7 +2,7 @@
   This program is the subject of trade secrets and intellectual property 
   rights owned by Carnegie Learning. This legend must continue to appear 
   in the source code despite modifications or enhancements by any party.*/
-package com.github.eduoliveiradev.evolution.service;
+package cl.services.lti1p3.ag.receiver.exception;
 
 import java.util.Map;
 import java.util.Properties;

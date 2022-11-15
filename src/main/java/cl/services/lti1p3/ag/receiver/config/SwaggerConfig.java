@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.config;
+package cl.services.lti1p3.ag.receiver.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

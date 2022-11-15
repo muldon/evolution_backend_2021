@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.service;
+package cl.services.lti1p3.ag.receiver.service;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,7 +10,6 @@ import java.security.GeneralSecurityException;
 import java.text.ParseException;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,10 +22,12 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
-import com.github.eduoliveiradev.evolution.dto.AccessToken;
-import com.github.eduoliveiradev.evolution.dto.AuthRequest;
 import com.nimbusds.jose.JOSEException;
 
+import cl.services.lti1p3.ag.receiver.dto.AccessToken;
+import cl.services.lti1p3.ag.receiver.dto.AuthRequest;
+import cl.services.lti1p3.ag.receiver.exception.LTI1p3Exception;
+import cl.services.lti1p3.ag.receiver.utils.Lti13Utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import lombok.extern.slf4j.Slf4j;

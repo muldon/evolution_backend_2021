@@ -1,4 +1,4 @@
-package com.github.eduoliveiradev.evolution.config;
+package cl.services.lti1p3.ag.receiver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
