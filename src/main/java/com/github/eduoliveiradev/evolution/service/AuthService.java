@@ -9,7 +9,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.text.ParseException;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -71,18 +73,19 @@ public class AuthService {
     //IMS specification: https://www.imsglobal.org/spec/security/v1p1#using-json-web-tokens-with-oauth-2-0-client-credentials-grant
     private void validateRequest(Jws<Claims> jwtClaims, String target) throws LTI1p3Exception {
     	Claims claims = jwtClaims.getBody();
-    	    	
-    	//The aud Claim MUST contain a value that identifies the authorization server as an intended audience. 
-    	//The Consumer MAY use the token endpoint URL of the authorization server as a value for an aud element to identify the authorization server as an intended audience of the JWT. 
-    	//The authorization server MUST reject any JWT that does not contain its own identity as the intended audience. 
-    	//This information MUST be sent as an array even when there is only one value.
-    	
-    	String audArr = ((String)claims.get("aud")).replaceAll("\\[","").replaceAll("\\]","").replaceAll("\\s+","");
-    	String[] aud = audArr.split("\\,");
-    	boolean validAud = Arrays.stream(aud).anyMatch(authorizationtTokenURL::equals);
+    	  
+    	/* 
+    	 * 1-Aud
+    	 * The aud Claim MUST contain a value that identifies the authorization server as an intended audience. 
+    	 * The Consumer MAY use the token endpoint URL of the authorization server as a value for an aud element to identify the authorization server as an intended audience of the JWT. 
+    	 * The authorization server MUST reject any JWT that does not contain its own identity as the intended audience. 
+    	 * This information MUST be sent as an array even when there is only one value.
+    	 */    	
+    	List<String> audList = (ArrayList)claims.get("aud");
+    	boolean validAud = audList.stream().anyMatch(authorizationtTokenURL::equals);
     	if(!validAud) {
     		//TODO - reuse or maintain a copy ? 
-    		throw new LTI1p3Exception("aud ("+aud+") does not contain the token endpoint: "+authorizationtTokenURL).log(2);
+    		throw new LTI1p3Exception("aud ("+audList+") does not contain the token endpoint: "+authorizationtTokenURL).log(2);
     	}
     	
     	System.out.println();
@@ -93,7 +96,7 @@ public class AuthService {
 	private AccessToken createToken(AuthRequest authRequest) throws GeneralSecurityException, IOException {
         Instant now = Instant.now();
         //long expiry = 36000L; // 10 horas
-        long expiry = 600L; // 10 min
+        long expiry = 300L; // 5 min
         String scope = "https://purl.imsglobal.org/spec/lti-ags/scope/score";
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer("self")
